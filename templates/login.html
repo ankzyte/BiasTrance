@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login — SCREEN</title>
+    <link rel="stylesheet" href="../static/style.css" />
+  </head>
+  <body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <h1>SCREEN</h1>
+      <ul>
+        <li><a href="main.html">Home</a></li>
+        <li><a href="/history">History</a></li>
+      </ul>
+    </nav>
+
+    <div class="form-box fade-up d1">
+      <span class="logo">SCREEN</span>
+      <h2>Welcome back</h2>
+      <p class="subtitle">Sign in to access your analysis history and saved reviews.</p>
+
+      <form method="POST">
+        <label class="field-label" for="username">Username</label>
+        <input type="text" id="username" name="username" placeholder="Enter your username" required />
+
+        <label class="field-label" for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="••••••••" required />
+
+        <button class="btn" type="submit" style="width:100%;justify-content:center;margin-top:28px;">
+          Sign In →
+        </button>
+      </form>
+
+      <p class="bottom-link">
+        New to SCREEN? <a href="signup.html">Create an account</a>
+      </p>
+    </div>
+
+  </body>
+</html>

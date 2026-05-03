@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>History — SCREEN</title>
+    <link rel="stylesheet" href="../static/style.css" />
+  </head>
+  <body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <h1>SCREEN</h1>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/history" class="active">History</a></li>
+        <li><a href="/login" class="btn-ghost" style="padding:7px 18px;font-size:12px;">Login</a></li>
+        <li><a href="/signup" style="background:var(--accent);color:#0a0a0f;padding:7px 18px;border-radius:7px;font-size:12px;font-weight:700;letter-spacing:.5px;">Sign Up</a></li>
+      </ul>
+    </nav>
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="hero-eyebrow fade-up d1">Activity Log</div>
+      <h2 class="fade-up d2">Analysis<br><span>History</span></h2>
+      <p class="fade-up d3">All previously submitted film reviews and media articles.</p>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="container">
+
+      <div class="card fade-up d4">
+        <h3>Past Bias Analysis</h3>
+
+        {% if reviews %}
+
+        <table class="history-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Text Snippet</th>
+              <th>Result</th>
+              <th>Confidence</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for review in reviews %}
+            <tr>
+              <td class="id-cell">{{ review.id }}</td>
+              <td class="text-preview">{{ review.text }}</td>
+              <td>
+                {% if review.prediction == "Biased" %}
+                <span class="badge biased">Biased</span>
+                {% else %}
+                <span class="badge neutral">Neutral</span>
+                {% endif %}
+              </td>
+              <td class="conf-cell">{{ review.confidence }}%</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+
+        {% else %}
+
+        <p style="margin-top:20px; color:var(--muted); font-size:14px;">
+          No analysis history yet. <a href="/">Run your first analysis →</a>
+        </p>
+
+        {% endif %}
+      </div>
+
+    </div>
+
+  </body>
+</html>

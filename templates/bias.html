@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bias Detection — SCREEN</title>
+    <link rel="stylesheet" href="../static/style.css" />
+  </head>
+  <body>
+
+    <!-- NAVBAR (Logged-in) -->
+    <nav class="navbar">
+      <h1>SCREEN</h1>
+      <ul>
+        <li><a href="main.html">Home</a></li>
+        <li><a href="bias.html" class="active">Bias Detection</a></li>
+        <li><a href="login.html" class="btn-ghost" style="padding:7px 18px;font-size:12px;">Log Out</a></li>
+      </ul>
+    </nav>
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="hero-eyebrow fade-up d1">Powered by ML</div>
+      <h2 class="fade-up d2">Bias<br><span>Detection</span></h2>
+      <p class="fade-up d3">Identify biased and neutral language in film reviews, articles, and promotional copy.</p>
+    </div>
+
+    <div class="container">
+
+      <div class="card fade-up d4">
+        <h3>Analyze Text</h3>
+        <p>Paste any film-related content below. Our model will classify the language and return a confidence score.</p>
+
+        <form method="POST">
+          <label class="field-label" for="bias-text">Film-related text</label>
+          <textarea
+            id="bias-text"
+            name="text"
+            placeholder="Paste a film review, article, or promotional content here…"
+          ></textarea>
+
+          <button class="btn" type="submit">
+            <span>↗</span> Check Bias
+          </button>
+        </form>
+
+        <!-- Result (always shown in bias.html for demo purposes) -->
+        <div class="result-box" style="margin-top:32px;">
+          <div class="result-item">
+            <strong>Prediction</strong>
+            <span class="result-value">Biased</span>
+          </div>
+          <div class="result-item">
+            <strong>Confidence</strong>
+            <span class="result-value">85%</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </body>
+</html>
