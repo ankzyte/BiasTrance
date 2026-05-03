@@ -34,7 +34,7 @@ API_URL = "https://router.huggingface.co/hf-inference/models/SamLowe/roberta-bas
 
 API_KEY = os.getenv("HF_TOKEN")
 headers = {
-    "Authorization": API_KEY
+    "Authorization": f"Bearer {API_KEY}"
 }
 with open("data/bias_detection_model.pkl", "rb") as f:
     model = pickle.load(f)
